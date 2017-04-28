@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p><a href="/">Home Page</a></p>
+    <h1><%= title %></h1>
+
+    <form name="searcher" action="/booklist" method="get">
+    <p>
+    Subject: <input type="text" name="subj" size="8" />
+    <input type="submit" value="Find"/>
+    </p>
+    </form>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Subject</th><th>Course</th><th>Title</th></tr>
+      </thead>
+      
+      <tbody>
+      <% items.forEach (function showItem(element, index, array) { %>
+      <tr>
+        <td><%= element._id %></td>
+        <td><%= element.subject %></td>
+        <td><%= element.course %></td>
+        <td><%= element.title %></td>
+      </tr>
+      <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
+
