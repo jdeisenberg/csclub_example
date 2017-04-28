@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+
+<form name="searcher" action="/booklist" method="get">
+<p>
+Subject: <input type="text" name="subj" size="8" />
+<input type="submit" value="Find"/>
+</p>
+</form>
+<table>
+  <thead>
+    <tr><th>ID</th><th>Subject</th><th>Course</th><th>Title</th></tr>
+  </thead>
+  
+  <tbody>
+  {{#each items}}
+  <tr>
+    <td>{{this._id}}</td>
+    <td>{{this.subject}}</td>
+    <td>{{this.course}}</td>
+    <td>{{this.title}}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>
